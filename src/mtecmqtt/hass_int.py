@@ -28,7 +28,7 @@ class HassIntegration:
     self.serial_no = serial_no
     self.device_info = { 
       "identifiers": [ self.serial_no ],
-      "name": "MTEC Energybutler", 
+      "name": "MTEC Energybutler Inverter 2", 
       "manufacturer": "MTEC", 
       "model": "Energybutler",
       "via_device": "MTECmqtt" 
