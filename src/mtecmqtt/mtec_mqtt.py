@@ -127,9 +127,9 @@ def main():
     logging.fatal("Cant retrieve initial config.")
     return
   
-  topic_base = cfg['MQTT_TOPIC'] + '/' + pv_config["serial_no"]["value"] + '/'  
+  topic_base = cfg['MQTT_TOPIC'] + '/' + pv_config["inverter_2_serial_no"]["value"] + '/'  
   if hass and not hass.is_initialized:
-    hass.initialize( pv_config["serial_no"]["value"] )
+    hass.initialize( pv_config["inverter_2_serial_no"]["value"] )
 
   # Main loop - exit on signal only
   while run_status: 
