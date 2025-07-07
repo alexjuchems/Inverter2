@@ -44,9 +44,9 @@ def create_config_file():
   # Write customized config
   cfg_path = os.environ.get('XDG_CONFIG_HOME') or os.environ.get('APPDATA')
   if cfg_path: # Usually something like ~/.config/mtecmqtt/config.yaml resp. 'C:\\Users\\xxxx\\AppData\\Roaming'
-    cfg_fname = os.path.join(cfg_path, "mtecmqtt", "config.yaml")  
+    cfg_fname = os.path.join(cfg_path, "mtecmqtt", "config2.yaml")  
   else:
-    cfg_fname = os.path.join(os.path.expanduser("~"), ".config", "mtecmqtt", "config.yaml")  # ~/.config/mtecmqtt/config.yaml
+    cfg_fname = os.path.join(os.path.expanduser("~"), ".config", "mtecmqtt", "config2.yaml")  # ~/.config/mtecmqtt/config.yaml
 
   try:
     os.makedirs(os.path.dirname(cfg_fname), exist_ok=True)
@@ -66,9 +66,9 @@ def init_config():
   conf_files.append(os.path.join(os.getcwd(), "config.yaml"))  # CWD/config.yaml
   cfg_path = os.environ.get('XDG_CONFIG_HOME') or os.environ.get('APPDATA')
   if cfg_path: # Usually something like ~/.config/mtecmqtt/config.yaml resp. 'C:\\Users\\xxxx\\AppData\\Roaming'
-    conf_files.append(os.path.join(cfg_path, "mtecmqtt", "config.yaml"))  
+    conf_files.append(os.path.join(cfg_path, "mtecmqtt", "config2.yaml"))  
   else:
-    conf_files.append(os.path.join(os.path.expanduser("~"), ".config", "mtecmqtt", "config.yaml"))  # ~/.config/mtecmqtt/config.yaml
+    conf_files.append(os.path.join(os.path.expanduser("~"), ".config", "mtecmqtt", "config2.yaml"))  # ~/.config/mtecmqtt/config.yaml
   
   cfg = False
   for fname_conf in conf_files:
