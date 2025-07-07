@@ -28,7 +28,7 @@ dynamic = ["version"]
 Repository = "https://github.com/croedel/MTECmqtt"
 
 [project.scripts]
-mtec_mqtt = "mtecmqtt.mtec_mqtt:main"
+mtec_mqtt2 = "mtecmqtt.mtec_mqtt:main"
 mtec_export = "mtecmqtt.mtec_export:main"
 mtec_util = "mtecmqtt.mtec_util:main" 
 
