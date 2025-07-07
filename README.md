@@ -150,7 +150,7 @@ MQTT_SERVER : localhost     # MQTT server
 MQTT_PORT : 1883            # MQTT server port
 MQTT_LOGIN  : " "           # MQTT Login
 MQTT_PASSWORD : ""          # MQTT Password  
-MQTT_TOPIC : "MTEC"         # MQTT topic name  
+MQTT_TOPIC : "MTEC_INVERTER_2"         # MQTT topic name  
 ```
 
 The other values of the `config.yaml` you probably don't need to change as of now.
