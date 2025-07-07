@@ -38,19 +38,19 @@ def read_MTEC_data( api, group ):
         if register.isnumeric():  
           pvdata[item["mqtt"]] = data[register]
         else: # non-numeric registers are deemed to be calculated pseudo-registers  
-          if register == "consumption":  
+          if register == "inverter_2_consumption":  
             pvdata[item["mqtt"]] = data["11016"]["value"] - data["11000"]["value"]  # power consumption 
-          elif register == "consumption-day":
+          elif register == "inverter_2_consumption-day":
             pvdata[item["mqtt"]] = data["31005"]["value"] + data["31001"]["value"] + data["31004"]["value"] - data["31000"]["value"] - data["31003"]["value"]  # power consumption 
           elif register == "autarky-day":
-            pvdata[item["mqtt"]] = 100*(1 - (data["31001"]["value"] / pvdata["consumption_day"])) if pvdata["consumption_day"]>0 else 0
-          elif register == "ownconsumption-day":
+            pvdata[item["mqtt"]] = 100*(1 - (data["31001"]["value"] / pvdata["inverter_2_consumption_day"])) if pvdata["inverter_2_consumption_day"]>0 else 0
+          elif register == "inverter_2_ownconsumption-day":
             pvdata[item["mqtt"]] = 100*(1-data["31000"]["value"] / data["31005"]["value"]) if data["31005"]["value"]>0 else 0
-          elif register == "consumption-total":
+          elif register == "inverter_2_consumption-total":
             pvdata[item["mqtt"]] = data["31112"]["value"] + data["31104"]["value"] + data["31110"]["value"] - data["31102"]["value"] - data["31108"]["value"]  # power consumption 
           elif register == "autarky-total":
-            pvdata[item["mqtt"]] = 100*(1 - (data["31104"]["value"] / pvdata["consumption_total"])) if pvdata["consumption_total"]>0 else 0
-          elif register == "ownconsumption-total":
+            pvdata[item["mqtt"]] = 100*(1 - (data["31104"]["value"] / pvdata["inverter_2_consumption_total"])) if pvdata["inverter_2_consumption_total"]>0 else 0
+          elif register == "inverter_2_ownconsumption-total":
             pvdata[item["mqtt"]] = 100*(1-data["31102"]["value"] / data["31112"]["value"]) if data["31112"]["value"]>0 else 0
           elif register == "api-date":    
             pvdata[item["mqtt"]] = now.strftime("%Y-%m-%d %H:%M:%S") # Local time of this server
