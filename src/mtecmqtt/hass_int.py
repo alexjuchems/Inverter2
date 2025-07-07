@@ -59,7 +59,7 @@ class HassIntegration:
         "name": item[0], 
         "unique_id": item[1], 
         "payload_press": item[2],
-        "command_topic": "MTEC/" + self.serial_no + "/automations/command",
+        "command_topic": "MTEC_INVERTER_2/" + self.serial_no + "/automations/command",
         "device": self.device_info
       }
       topic = cfg["HASS_BASE_TOPIC"] + "/button/" + item[1] + "/config"
@@ -89,7 +89,7 @@ class HassIntegration:
       "name": item["name"], 
       "unique_id": "MTEC_" + item["mqtt"], 
       "unit_of_measurement": item["unit"],
-      "state_topic": "MTEC/" + self.serial_no + "/" + item["group"] + "/" + item["mqtt"],
+      "state_topic": "MTEC_INVERTER_2/" + self.serial_no + "/" + item["group"] + "/" + item["mqtt"],
       "device": self.device_info
     }
     if item.get("hass_device_class"):
@@ -107,7 +107,7 @@ class HassIntegration:
     data_item = { 
       "name": item["name"], 
       "unique_id": "MTEC_" + item["mqtt"], 
-      "state_topic": "MTEC/" + self.serial_no + "/" + item["group"] + "/" + item["mqtt"],
+      "state_topic": "MTEC_INVERTER_2/" + self.serial_no + "/" + item["group"] + "/" + item["mqtt"],
       "device": self.device_info
     }
     if item.get("hass_device_class"):
