@@ -74,7 +74,7 @@ If both command return `command not found`, you need to install python3 on you s
 
 (2) Create a new directory for the installation (e.g. within your HOME directory)
 ```
-mkdir mtecmqtt && cd mtecmqtt
+mkdir mtecmqtt2 && cd mtecmqtt2
 ```
 
 (3) Create and activate a virtual python environment for the project
@@ -89,12 +89,12 @@ python3 -m venv . && source bin/activate
 
 (4) Install the MTECmqtt project from github
 ```
-pip install https://github.com/croedel/MTECmqtt/archive/refs/heads/main.zip
+pip install https://github.com/alexjuchems/Inverter2/archive/refs/heads/main.zip
 ```
 
 As a next step, we can try to start the MQTT server. 
 ```
-mtec_mqtt
+mtec_mqtt2
 ```
 Starting it for the first time will create your `config.yaml` file. Please review and (if necessary) adapt it you needs (see below for details).
 
@@ -109,7 +109,7 @@ sudo bin/install_systemd_service.sh
 
 To check if the service is running smoothly, you can execute:
 ```
-sudo systemctl status mtec_mqtt
+sudo systemctl status mtec_mqtt2
 ```
 
 ### Advanced configuration 
